@@ -3,9 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mm_app/Utilis/colors.dart';
 
 class CustomButton extends StatelessWidget {
-  String? title; 
+ final String? title; 
+ final Color? color; 
    CustomButton({
-    super.key,
+    super.key,this.color,
     this.title
   });
 
@@ -22,7 +23,7 @@ class CustomButton extends StatelessWidget {
         style: TextStyle(
             fontSize: 18,
             fontFamily: 'Inter',
-            color: Colors.white,
+            color: color,
             fontWeight: FontWeight.w700),
       ),
     );

@@ -7,7 +7,7 @@ import 'package:mm_app/Utilis/colors.dart';
 import 'package:mm_app/pages/auth/view/get_started_page.dart';
 import 'package:mm_app/widgets/custom_btn_one.dart';
 
-
+import '../../../l/page-1/all_pages.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -98,9 +98,9 @@ class _LoginPageState extends State<LoginPage> {
                 onTap: () {
 
                 //meually theme change
-            
+                Get.to(Allpages());
 
-                  EasyDynamicTheme.of(context).changeTheme();
+                  // EasyDynamicTheme.of(context).changeTheme();
                 },
                 child: Container(
                   alignment: Alignment.center,
