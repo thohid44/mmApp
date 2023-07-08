@@ -11,7 +11,7 @@ import 'package:easy_dynamic_theme/easy_dynamic_theme.dart';
 import 'Utilis/mm_theme.dart';
 import 'l/page-1/homeactivity.dart';
 import 'l/page-1/notification.dart';
-import 'l/page-1/post-pototype.dart';
+
 
 void main() {
     SystemChrome.setSystemUIOverlayStyle(
