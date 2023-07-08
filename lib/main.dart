@@ -1,11 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+
 import 'package:mm_app/pages/auth/view/login.dart';
-import 'package:mm_app/pages/chat/view/chat_page.dart';
+
+import 'package:easy_dynamic_theme/easy_dynamic_theme.dart';
+
+import 'Utilis/mm_theme.dart';
 
 void main() {
-  runApp(const MyApp());
+    SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
+  WidgetsFlutterBinding.ensureInitialized();
+
+  runApp(
+    EasyDynamicThemeWidget(
+      child:  MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -22,15 +35,13 @@ class MyApp extends StatelessWidget {
           return GetMaterialApp(
             debugShowCheckedModeBanner: false,
             title: 'First Method',
-            // You can use the library anywhere in the app even in theme
-            theme: ThemeData(
-              primarySwatch: Colors.blue,
-           //   brightness: Brightness.dark
-             // textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
-            ),
+                 theme: lightThemeData,
+      darkTheme: darkThemeData,
+      themeMode: EasyDynamicTheme.of(context).themeMode!,
+  
             home: child,
           );
         },
-        child: ChatPage());
+        child:LoginPage() );
   }
 }
